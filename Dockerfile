@@ -13,11 +13,11 @@ ENV VITE_REACT_BASE_URL=$VITE_REACT_BASE_URL
 WORKDIR /app
 
 # Paketlarni o'rnatish
-COPY package.json ./ 
+COPY package.json ./
 RUN npm install
 
 # Barcha fayllarni ko‘chirish
-COPY . ./ 
+COPY . ./
 
 # Build qilish
 RUN npm run build
@@ -35,7 +35,7 @@ RUN rm -rf ./*
 COPY --from=build /app/dist ./
 
 # Nginx konfiguratsiya faylini ko‘chirish
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY ./nginx.conf /etc/nginx/nginx.conf
 
 # Portni ochish
 EXPOSE 80
