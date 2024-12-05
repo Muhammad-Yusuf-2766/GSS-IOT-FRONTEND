@@ -2,6 +2,7 @@ import ActiveProducts from '../../Components/Home_comp/ActiveProducts'
 import Clinets from '../../Components/Home_comp/ClientsCard'
 import Products from '../../Components/Home_comp/Products'
 import Users from '../../Components/Home_comp/UsersCard'
+import ProjectStatistics from './ProjectStatistics'
 
 const Home = () => {
 	return (
@@ -15,9 +16,9 @@ const Home = () => {
 				<Products />
 				{/* <MemberCard /> */}
 			</div>
-			{/* <div className='w-full h-auto mt-5 mb-5'>
+			<div className='w-full h-auto mt-5 mb-5'>
 				<ProjectStatistics />
-			</div> */}
+			</div>
 			<div className='flex flex-col mt-5'>
 				<h1 className='leading-none text-3xl font-bold text-gray-700 pb-2 mb-5'>
 					Active Clients
