@@ -31,12 +31,10 @@ const UserHeader = ({ handeLogout }) => {
 		}
 	}, [])
 	return (
-		<>
-			<div className='flex items-center justify-center'>
-				<h4 className='text-gray-600 underline underline-offset-2 font-bold text-xl'>
-					{user && user.user_name}
-				</h4>
-			</div>
+		<div className='flex items-center gap-x-2'>
+			<h4 className='text-gray-600 underline underline-offset-2 font-bold text-xl'>
+				{user && user.user_name}
+			</h4>
 			<div className='w-32 relative'>
 				<img
 					ref={imgRef}
@@ -54,20 +52,20 @@ const UserHeader = ({ handeLogout }) => {
 						<ul>
 							<li className='p-1 text-md cursor-pointer rounded hover:bg-blue-100'>
 								<Link to={'/my-page'} onClick={() => setOpenDrop(false)}>
-									My Profile
+									마이페이지
 								</Link>
 							</li>
 							<li
 								onClick={handeLogout}
 								className='p-1 text-md cursor-pointer rounded hover:bg-blue-100'
 							>
-								Log-Out
+								로그아웃
 							</li>
 						</ul>
 					</div>
 				)}
 			</div>
-		</>
+		</div>
 	)
 }
 

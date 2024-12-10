@@ -74,7 +74,7 @@ const Nodes = () => {
 		<div className=''>
 			<FilteredTotalCnt
 				item={allNodes}
-				itemName={'Nodes'}
+				itemName={'노드'}
 				handleNodeStatus={handleAllNodeStatus}
 			/>
 			<NodesList

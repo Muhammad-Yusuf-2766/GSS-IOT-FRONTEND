@@ -101,7 +101,7 @@ const BuildingForm = ({ gateways, users }) => {
 	return (
 		<div className='w-[40%] flex justify-center items-center flex-col'>
 			<h1 className='leading-none text-3xl font-bold text-gray-700 pb-2 mb-5 underline underline-offset-4'>
-				Create new Building
+				현장 추가생성
 			</h1>
 			<form
 				onSubmit={handleSubmit}
@@ -110,7 +110,7 @@ const BuildingForm = ({ gateways, users }) => {
 				{/* Building Name */}
 				<div className='mb-4'>
 					<label className='block text-gray-500 text-sm font-medium mb-2'>
-						Company Name:
+						기업명:
 					</label>
 					<input
 						required
@@ -125,7 +125,7 @@ const BuildingForm = ({ gateways, users }) => {
 				{/* Building Number */}
 				<div className='mb-4'>
 					<label className='block text-gray-500 text-sm font-medium mb-2'>
-						Building Number:
+						현장 No.
 					</label>
 					<input
 						required
@@ -140,7 +140,7 @@ const BuildingForm = ({ gateways, users }) => {
 				{/* Building Address */}
 				<div className='mb-4'>
 					<label className='block text-gray-500 text-sm font-medium mb-2'>
-						Building Address:
+						현장 주소:
 					</label>
 					<input
 						required
@@ -155,7 +155,7 @@ const BuildingForm = ({ gateways, users }) => {
 				{/* Gateway Selection Dropdown */}
 				<div className='mb-4'>
 					<h3 className='text-lg font-semibold text-gray-700'>
-						Select Gateways
+						게이트웨이 선택
 					</h3>
 					<div className='relative'>
 						<button
@@ -163,7 +163,7 @@ const BuildingForm = ({ gateways, users }) => {
 							onClick={toggleGatewayDropdown}
 							className='w-full px-4 py-2 bg-indigo-700 text-white rounded-md text-left flex justify-between items-center hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-indigo-700'
 						>
-							Choose Gateways
+							게이트웨이 선택
 							<svg
 								className={`w-5 h-5 transform transition-transform ${
 									gatewayDropdownOpen ? 'rotate-180' : ''
@@ -185,7 +185,7 @@ const BuildingForm = ({ gateways, users }) => {
 						{gatewayDropdownOpen && (
 							<div className='mt-2 p-4 border border-gray-300 rounded-md bg-gray-200 absolute w-full z-10'>
 								{gateways.length === 0 ? (
-									<p className='text-gray-500'>No available gateways</p>
+									<p className='text-gray-500'>사용불가(게이트웨이)</p>
 								) : (
 									gateways.map(gw => (
 										<div key={gw._id} className='flex items-center mb-2'>
@@ -200,7 +200,7 @@ const BuildingForm = ({ gateways, users }) => {
 												htmlFor={`gw-${gw.serial_number}`}
 												className='text-gray-500'
 											>
-												Gate-way: {gw.serial_number}
+												게이트웨이: {gw.serial_number}
 											</label>
 										</div>
 									))
@@ -212,14 +212,14 @@ const BuildingForm = ({ gateways, users }) => {
 
 				{/* User Selection Dropdown */}
 				<div className='mb-4'>
-					<h3 className='text-lg font-semibold text-gray-700'>Select Users</h3>
+					<h3 className='text-lg font-semibold text-gray-700'>사용자 선택</h3>
 					<div className='relative'>
 						<button
 							type='button'
 							onClick={toggleUserDropdown}
 							className='w-full px-4 py-2 bg-indigo-700 text-white rounded-md text-left flex justify-between items-center hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-indigo-700'
 						>
-							Choose Users
+							사용자 선택
 							<svg
 								className={`w-5 h-5 transform transition-transform ${
 									userDropdownOpen ? 'rotate-180' : ''
@@ -269,7 +269,7 @@ const BuildingForm = ({ gateways, users }) => {
 				{/* Permit Date */}
 				<div className='mb-4'>
 					<label className='block text-gray-500 text-sm font-medium mb-2'>
-						Permit Date:
+						임대일:
 					</label>
 					<input
 						required
@@ -284,7 +284,7 @@ const BuildingForm = ({ gateways, users }) => {
 				{/* Expiry Date */}
 				<div className='mb-4'>
 					<label className='block text-gray-500 text-sm font-medium mb-2'>
-						Expiry Date:
+						만료일:
 					</label>
 					<input
 						required
@@ -303,7 +303,7 @@ const BuildingForm = ({ gateways, users }) => {
 						type='submit'
 						className='bg-indigo-700 text-white px-6 py-2 rounded-md hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-indigo-700'
 					>
-						Submit
+						제출
 					</button>
 				</div>
 			</form>

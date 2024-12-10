@@ -1,12 +1,6 @@
 import React from 'react'
 
-const tHead = [
-	'User name',
-	'User email',
-	'User type',
-	'Change user',
-	'Delete user',
-]
+const tHead = ['사용자 이름', '사용자 이메일', '사용자 유형', '변경', '삭제']
 
 const AllUsers = ({ allUsers, handleClient, handleUser }) => {
 	return (
@@ -49,22 +43,22 @@ const AllUsers = ({ allUsers, handleClient, handleUser }) => {
 									{user.user_type === 'CLIENT' ? (
 										<button
 											onClick={() => handleUser(user._id)}
-											className='w-[110px] border py-2 px-4 rounded-md bg-gray-500 text-white hover:bg-gray-600'
+											className='border py-2 px-4 rounded-md bg-gray-500 text-white hover:bg-gray-600'
 										>
-											Make User!
+											상태변경
 										</button>
 									) : (
 										<button
 											onClick={() => handleClient(user._id)}
 											className='border py-2 px-4 rounded-md bg-indigo-500 text-white/100 hover:bg-indigo-600'
 										>
-											Make Cleint!
+											상태 변경
 										</button>
 									)}
 								</td>
 								<td className='px-4 py-3 border-x-2 border-gray-400 text-center'>
 									<button className='border py-2 px-4 rounded-md bg-red-500 text-white hover:bg-red-600'>
-										Delete
+										삭제
 									</button>
 								</td>
 							</tr>

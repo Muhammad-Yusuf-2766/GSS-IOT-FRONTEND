@@ -70,18 +70,18 @@ const GatewayForm = ({ availableNodes }) => {
 	return (
 		<div className='w-[40%] flex justify-center items-center flex-col'>
 			<h1 className='leading-none text-xl font-bold text-gray-700 pb-2 mb-5 underline underline-offset-4'>
-				Create new Gateway
+				게이트웨이 생성
 			</h1>
 			<form
 				className='w-full h-auto p-4 pb-8 border bg-white rounded-lg shadow-lg shadow-indigo-300'
 				onSubmit={handleSubmit}
 			>
 				<h4 className='text-center text-lg text-gray-700 font-bold capitalize mb-4'>
-					Safety management control system
+					스마트가드 게이트웨이 No.
 				</h4>
 				<div className='mb-4'>
 					<label className='block text-gray-700 font-bold mb-2'>
-						Gateway-number:
+						게이트웨이 No.
 					</label>
 					<input
 						type='text'
@@ -94,7 +94,7 @@ const GatewayForm = ({ availableNodes }) => {
 				</div>
 				<div className='mb-4'>
 					<label className='block text-gray-700 font-bold mb-2'>
-						Node start Number:
+						노드 시작넘버:
 					</label>
 					<input
 						type='number'
@@ -107,7 +107,7 @@ const GatewayForm = ({ availableNodes }) => {
 				</div>
 				<div className='mb-4'>
 					<label className='block text-gray-700 font-bold mb-2'>
-						Node end Number:
+						노드 끝넘버:
 					</label>
 					<input
 						type='number'
@@ -123,11 +123,11 @@ const GatewayForm = ({ availableNodes }) => {
 					onClick={handleNodesSelection}
 					className='w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700 transition-all duration-200 mb-4'
 				>
-					Nodes ni tanlash
+					노드 확인
 				</button>
 				<div className='mb-4'>
 					<label className='block text-gray-700 font-bold mb-2'>
-						Selected Nodes:
+						노드 선택:
 					</label>
 					{gatewayData.nodes.length > 0 ? (
 						<div className='flex flex-wrap'>
@@ -138,14 +138,14 @@ const GatewayForm = ({ availableNodes }) => {
 							))}
 						</div>
 					) : (
-						<p>No nodes selected</p>
+						<p>선택된 노드 없음</p>
 					)}
 				</div>
 				<button
 					type='submit'
 					className='w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700 transition-all duration-200'
 				>
-					Create Gateway
+					게이트웨이 생성
 				</button>
 			</form>
 		</div>

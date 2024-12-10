@@ -14,7 +14,7 @@ export const Services = () => {
 						strokeWidth='1'
 						className='text-indigo-500'
 					/>
-					Our Services
+					저희 서비스
 				</h6>
 				<div className='w-full bg-white py-10 shadow shadow-indigo-500 rounded-lg h-auto flex items-center justify-center gap-x-4 gap-y-10 flex-wrap mb-10'>
 					{ServiceData.slice(0, 3).map(data => (
@@ -25,7 +25,7 @@ export const Services = () => {
 					route={'/services'}
 					className='py-4 px-8 flex gap-x-4 border bg-indigo-600 text-white hover:bg-indigo-700'
 				>
-					View All Services
+					자세히보기
 					<MoveRight />
 				</PrimaryBtn>
 			</div>

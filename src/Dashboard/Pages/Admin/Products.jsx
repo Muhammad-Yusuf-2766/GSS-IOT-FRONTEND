@@ -9,7 +9,7 @@ const AllProducts = () => {
 		<>
 			<div className='w-full h-auto flex justify-center mt-4'>
 				<h1 className='leading-none text-3xl font-bold text-gray-700 pb-2 mb-5 underline underline-offset-4'>
-					All Products List
+					제품 리스트
 				</h1>
 			</div>
 			<div className='w-[80%] h-auto m-auto flex items-center justify-between gap-4 p-4'>

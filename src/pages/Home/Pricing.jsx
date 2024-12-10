@@ -5,30 +5,30 @@ import PrimaryBtn from '../../components/Button/PrimaryBtn'
 const Pricing = () => {
 	const plans = [
 		{
-			title: 'Basic Plan',
+			title: '기본 구매',
 			price: 165.0,
-			period: 'monthly',
-			support1: 'Get all service support',
+			period: '월',
+			support1: '서비스준비중',
 			support2: '24/7 Monitoring by phone',
-			support3: 'High level of security',
+			support3: '서비스준비중',
 			checked: 'text-indigo-600',
 		},
 		{
-			title: 'Premium Plan',
+			title: '프리미엄 구매',
 			price: 200.0,
-			period: 'monthly',
-			support1: 'Get all service support',
+			period: '월',
+			support1: '서비스준비중',
 			support2: '24/7 Monitoring by phone',
-			support3: 'High level of security',
+			support3: '서비스준비중',
 			checked: 'text-indigo-600',
 		},
 		{
-			title: 'Wip Plan',
+			title: 'VIP 구매',
 			price: 210.0,
-			period: 'monthly',
-			support1: 'Get all service support',
+			period: '월',
+			support1: '서비스준비중',
 			support2: '24/7 Monitoring by phone',
-			support3: 'High level of security',
+			support3: '서비스준비중',
 			checked: 'text-indigo-600',
 		},
 	]
@@ -41,7 +41,7 @@ const Pricing = () => {
 						strokeWidth='1'
 						className='text-indigo-500'
 					/>
-					Our Pricing Plan
+					서비스 구매
 				</h6>
 				<div className='w-full h-auto flex justify-center gap-x-5 gap-y-8 flex-wrap'>
 					{/* Basic Plan */}
@@ -81,7 +81,7 @@ const Pricing = () => {
 								</div>
 							</div>
 							<PrimaryBtn className='w-full h-11 text-lg bg-indigo-600/80 text-white justify-center font-semibold tracking-wider mb-3 uppercase rounded-md'>
-								Select Plan
+								구매 선택
 							</PrimaryBtn>
 						</div>
 					))}

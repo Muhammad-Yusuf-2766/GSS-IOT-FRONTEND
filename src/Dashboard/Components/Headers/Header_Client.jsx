@@ -27,11 +27,11 @@ const HeaderClient = () => {
 		<div className='flex justify-between items-center p-4 border-indigo-500 border-b-2 '>
 			{verifyUserData && (
 				<div>
-					<h1 className='text-md font-semibold text-gray-700'>Welcome Back!</h1>
+					<h1 className='text-md font-semibold text-gray-700'>환영합니다.</h1>
 
 					{verifyUserData.user_title === 'BOSS' ? (
 						<p className='text-xl font-semibold text-gray-700'>
-							Manager{' '}
+							매니저{' '}
 							<span className='text-xl font-bold text-indigo-700'>
 								{' '}
 								{verifyUserData.user_name.toUpperCase()}

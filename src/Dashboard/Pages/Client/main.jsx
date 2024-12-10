@@ -77,7 +77,7 @@ const MainClient = () => {
 	return (
 		<div className='p-5'>
 			<h1 className='leading-none text-3xl font-bold text-gray-700 pb-2 mb-5'>
-				Company Statistics
+				대시보드{' '}
 			</h1>
 			<div className=''>
 				<UsersCard cardData={bossCardData} />

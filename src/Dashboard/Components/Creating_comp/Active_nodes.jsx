@@ -5,7 +5,7 @@ const ActiveNodes = ({ nodes }) => {
 	return (
 		<div className='flex justify-center items-center flex-col'>
 			<h1 className='leading-none text-xl font-bold text-gray-700 underline underline-offset-4'>
-				Active nodes list
+				작동 노드 현황
 			</h1>
 			<div className='w-[200px] h-[540px] overflow-y-auto shadow-md shadow-indigo-500 bg-white m-5 sm:rounded-lg'>
 				<div className='max-h-[620px]'>
@@ -17,13 +17,13 @@ const ActiveNodes = ({ nodes }) => {
 									scope='col'
 									className='px-4 py-3 border-x-2 border-gray-400'
 								>
-									Node number:
+									노드 No.
 								</th>
 								<th
 									scope='col'
 									className='px-4 py-3 border-x-2 border-gray-400'
 								>
-									Node status:
+									노드 상태:
 								</th>
 							</tr>
 						</thead>

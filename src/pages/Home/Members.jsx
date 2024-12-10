@@ -14,7 +14,7 @@ const Members = () => {
 						strokeWidth='1'
 						className='text-indigo-500'
 					/>
-					Our Company Members
+					기업 구성원
 				</h6>
 				<div className='w-full h-auto flex items-center justify-center lg:gap-x-8 md:gap-x-6 sm:gap-x-4 gap-x-3 lg:gap-y-8 md:gap-y-6 sm:gap-y-10 gap-y-10 flex-wrap mb-10'>
 					{/* Let's display them through loop */}
@@ -26,7 +26,7 @@ const Members = () => {
 					route={'/community'}
 					className='py-4 px-8 flex gap-x-4 border bg-indigo-600 text-white hover:bg-indigo-700'
 				>
-					View All Members
+					자세히보기
 					<MoveRight />
 				</PrimaryBtn>
 			</div>

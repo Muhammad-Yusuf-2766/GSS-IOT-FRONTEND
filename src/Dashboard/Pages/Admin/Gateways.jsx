@@ -22,7 +22,7 @@ const Gateways = () => {
 	}, [])
 	return (
 		<div className=''>
-			<FilteredTotalCnt item={allgateways} itemName={'Gateways'} />
+			<FilteredTotalCnt item={allgateways} itemName={'게이트웨이'} />
 
 			<GatewaysList allgateways={allgateways} />
 		</div>

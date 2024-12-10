@@ -135,7 +135,7 @@ const ClientForm = ({ users }) => {
 	return (
 		<div className='w-[40%] flex justify-center items-center flex-col'>
 			<h1 className='leading-none text-3xl font-bold text-gray-700 pb-2 mb-5 underline underline-offset-4'>
-				Create new Client
+				사용자 추가
 			</h1>
 			<form
 				onSubmit={handleSubmit}
@@ -144,7 +144,7 @@ const ClientForm = ({ users }) => {
 				{/* Client Company */}
 				<div className='mb-4'>
 					<label className='block text-gray-500 text-sm font-medium mb-2'>
-						Client Company:
+						현장대표:
 					</label>
 					<input
 						required
@@ -174,7 +174,7 @@ const ClientForm = ({ users }) => {
 				{/* Buildings Addresses */}
 				<div className='mb-4'>
 					<label className='block text-gray-500 text-sm font-medium mb-2'>
-						Company Address:
+						기업주소:
 					</label>
 					<input
 						required
@@ -188,16 +188,14 @@ const ClientForm = ({ users }) => {
 
 				{/* Buildings Selection Dropdown */}
 				<div className='mb-4'>
-					<h3 className='text-lg font-semibold text-gray-700'>
-						Select Buildings
-					</h3>
+					<h3 className='text-lg font-semibold text-gray-700'>현장 선택:</h3>
 					<div className='relative'>
 						<button
 							type='button'
 							onClick={toggleBuildingDropdown}
 							className='w-full px-4 py-2 bg-indigo-700 text-white rounded-md text-left flex justify-between items-center hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-indigo-700'
 						>
-							Choose Buildings
+							현장 선택:
 							<svg
 								className={`w-5 h-5 transform transition-transform ${
 									userDropdownOpen ? 'rotate-180' : ''
@@ -219,7 +217,7 @@ const ClientForm = ({ users }) => {
 						{buildigDropdownOpen && (
 							<div className='mt-2 p-4 border border-gray-300 rounded-md bg-gray-200 absolute w-full z-10'>
 								{buildings.length === 0 ? (
-									<p className='text-gray-500'>No available users</p>
+									<p className='text-gray-500'>사용불가 ( 건물 )</p>
 								) : (
 									buildings.map((building, index) => (
 										<div key={index} className='flex items-center mb-2'>
@@ -246,14 +244,14 @@ const ClientForm = ({ users }) => {
 
 				{/* User Selection Dropdown */}
 				<div className='mb-4'>
-					<h3 className='text-lg font-semibold text-gray-700'>Select Users</h3>
+					<h3 className='text-lg font-semibold text-gray-700'>사용자 선택</h3>
 					<div className='relative'>
 						<button
 							type='button'
 							onClick={toggleUserDropdown}
 							className='w-full px-4 py-2 bg-indigo-700 text-white rounded-md text-left flex justify-between items-center hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-indigo-700'
 						>
-							Choose Users
+							사용자 선택
 							<svg
 								className={`w-5 h-5 transform transition-transform ${
 									userDropdownOpen ? 'rotate-180' : ''
@@ -275,7 +273,7 @@ const ClientForm = ({ users }) => {
 						{userDropdownOpen && (
 							<div className='mt-2 p-4 border border-gray-300 rounded-md bg-gray-200 absolute w-full z-10'>
 								{users.length === 0 ? (
-									<p className='text-gray-500'>No available users</p>
+									<p className='text-gray-500'>사용불가 ( 사용자 )</p>
 								) : (
 									users.map((user, index) => (
 										<div key={index} className='flex items-center mb-2'>
@@ -306,7 +304,7 @@ const ClientForm = ({ users }) => {
 						type='submit'
 						className='bg-indigo-700 text-white px-6 py-2 rounded-md hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-indigo-700'
 					>
-						Submit
+						제출
 					</button>
 				</div>
 			</form>

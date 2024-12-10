@@ -67,18 +67,18 @@ const NodeForm = () => {
 	return (
 		<div className='w-[30%] flex justify-center items-center flex-col'>
 			<h1 className='leading-none text-xl font-bold text-gray-700 pb-2 mb-5 underline underline-offset-4'>
-				Create new Nodes
+				노드 생성
 			</h1>
 			<form
 				onSubmit={handleSubmit}
 				className='w-full h-[400px] p-4 border bg-white rounded-lg shadow-lg shadow-indigo-300'
 			>
 				<h4 className='text-center text-lg text-gray-700 font-bold capitalize mb-4'>
-					Safety management control system
+					스마트가드 노드 No.
 				</h4>
 				<div className='mb-4'>
 					<label className='block text-gray-700 font-bold mb-2'>
-						Start Node:
+						노드-시작:
 					</label>
 					<input
 						type='number'
@@ -91,9 +91,7 @@ const NodeForm = () => {
 				</div>
 
 				<div className='mb-4'>
-					<label className='block text-gray-700 font-bold mb-2'>
-						End Node:
-					</label>
+					<label className='block text-gray-700 font-bold mb-2'>노드-끝:</label>
 					<input
 						type='number'
 						name='endNode'
@@ -108,7 +106,7 @@ const NodeForm = () => {
 					type='submit'
 					className='flex items-center justify-between text-white bg-indigo-600 shadow-md shadow-gray-50 hover:shadow-gray-400 font-medium rounded-lg text-sm px-5 py-3 text-center me-2'
 				>
-					Create Nodes
+					노드 생성
 				</button>
 			</form>
 		</div>

@@ -15,7 +15,7 @@ const UsersCard = ({ cardData }) => {
 					<div className='mt-5 flex flex-col space-y-5 pr-10'>
 						<div className='flex justify-start space-x-10 items-center text-left'>
 							<card.icon size={30} className='text-gray-700' />
-							<h1 className='w-1/2 text-gray-700'>Total {card.header}</h1>
+							<h1 className='w-1/2 text-gray-700'>총 {card.header}</h1>
 							<p className='leading-none text-xl font-bold text-indigo-500'>
 								{card.number}
 							</p>

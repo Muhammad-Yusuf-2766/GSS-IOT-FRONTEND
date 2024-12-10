@@ -113,7 +113,7 @@ const ProjectStatistics = () => {
 				<div className='flex justify-between'>
 					<div>
 						<h5 className='leading-none text-3xl font-bold text-gray-700 pb-2'>
-							Gateways & Nodes count statistics
+							스마트가드 전체 현황{' '}
 						</h5>
 					</div>
 					<div className='flex items-center px-2.5 py-0.5 text-base font-semibold text-green-500 dark:text-green-500 text-center'>

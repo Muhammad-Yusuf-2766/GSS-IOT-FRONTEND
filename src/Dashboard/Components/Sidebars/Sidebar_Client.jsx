@@ -62,7 +62,7 @@ const SidebarClient = () => {
 					{' '}
 					{/* <span>?</span> */}
 					<span className='md:hidden flex'>?</span>
-					<span className='hidden md:flex'>Need Help ?</span>
+					<span className='hidden md:flex'>문의 ?</span>
 				</p>
 			</div>
 		</div>

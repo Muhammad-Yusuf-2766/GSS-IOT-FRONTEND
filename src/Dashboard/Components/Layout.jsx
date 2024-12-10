@@ -16,7 +16,7 @@ import SidebarClient from './Sidebars/Sidebar_Client'
 const DashboardLayout = () => {
 	const { buildings } = useBuildings()
 	const { updateBuildingData } = useBuildingIoContext()
-	const [nodes, setNodes] = useState([])
+	// const [nodes, setNodes] = useState([])
 	const alarmRef = useRef(null)
 	const socket = useRef(null) // Socket clientni saqlash uchun reference
 	const [gatewaySets, setGatewaySets] = useState()
@@ -50,7 +50,7 @@ const DashboardLayout = () => {
 			})
 
 			const gatewaySets = response.data.gateway_sets
-			console.log(response)
+			console.log('fetchUserGateways', response)
 			setGatewaySets(gatewaySets)
 			return gatewaySets
 		} catch (error) {
@@ -108,7 +108,7 @@ const DashboardLayout = () => {
 				// Building uchun localStorage'dan ma'lumot olish
 				const storedBuildingData =
 					JSON.parse(localStorage.getItem(`buildingData_${buildingId}`)) || []
-				setNodes(storedBuildingData)
+				// setNodes(storedBuildingData)
 
 				// Ma'lumotlarni yangilash
 				const updatedBuildingData = storedBuildingData.map(door => {

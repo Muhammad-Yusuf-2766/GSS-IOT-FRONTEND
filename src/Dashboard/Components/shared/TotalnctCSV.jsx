@@ -50,11 +50,11 @@ const TotalcntCsv = ({ itemName, item, icon }) => {
 				<div className='flex items-center gap-3'>
 					<span className='text-4xl'>{icon}</span>
 					<span>
-						Total {itemName} number: {item.length}
+						총 {itemName} 수: {item.length}
 					</span>
 				</div>
 				<div className='flex justify-center items-center gap-3'>
-					<label htmlFor='nodesFile'>Upload nodes position CSV file:</label>
+					<label htmlFor='nodesFile'>노드 위치 CSV 파일 업로드:</label>
 					<input
 						id='nodesFile'
 						ref={fileInputRef} // Ref orqali fayl inputni ulaymiz
@@ -100,7 +100,7 @@ const TotalcntCsv = ({ itemName, item, icon }) => {
 						className='py-2 px-3 w-fit h-auto bg-indigo-500 text-white text-mg rounded-md mt-3'
 						onClick={() => SetPostionRequest(fileData)}
 					>
-						Set nodes position
+						노드 위치 설정
 					</button>
 				</>
 			)}

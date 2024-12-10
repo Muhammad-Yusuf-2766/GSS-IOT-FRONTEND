@@ -10,25 +10,22 @@ const AllClients = ({ client }) => {
 			<div className='p-5 bg-white rounded-xl shadow-xl shadow-indigo-200 cursor-pointer hover:shadow-indigo-400'>
 				<div className='flex justify-between'>
 					<h1 className='leading-none text-xl font-bold text-gray-700 pb-2'>
-						Client:
+						회사:
 						<span className='text-center text-lg font-semibold text-indigo-700 ml-1'>
 							{client.company}
 						</span>
 					</h1>
-					<PiUserCircleCheckFill
-						className={`text-indigo-700 ${''}`}
-						size={40}
-					/>
+					<PiUserCircleCheckFill className={`text-indigo-700`} size={40} />
 				</div>
 				<div className='mt-5 flex flex-col space-y-5 pr-10 text-gray-700'>
 					<div className='flex justify-start space-x-10 items-center text-left'>
 						<MdOutlineLocationCity size={30} />
-						<h1 className='w-1/2 text-gray-700'>Total buildings</h1>
+						<h1 className='w-1/2 text-gray-700'> 총 건물</h1>
 						<p>{client.buildings.length}</p>
 					</div>
 					<div className='flex justify-start space-x-10 items-center text-left text-gray-700'>
 						<FaHourglassStart size={30} className='text-gray-700' />
-						<h1 className='w-1/2'>Client Status</h1>
+						<h1 className='w-1/2'>회사 상태</h1>
 						{client.status == true ? (
 							<ImSpinner9 size={25} className='animate-spin text-indigo-500' />
 						) : (
@@ -37,7 +34,7 @@ const AllClients = ({ client }) => {
 					</div>
 					<div className='flex justify-start space-x-10 items-center text-left text-gray-700'>
 						<ImLocation2 size={30} />
-						<h1 className='w-1/2'>Address</h1>
+						<h1 className='w-1/2'>주소</h1>
 						<p className='text-sm'>{client.company_addr.slice(0, 3)}...</p>
 					</div>
 				</div>

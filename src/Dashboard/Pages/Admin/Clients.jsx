@@ -31,7 +31,7 @@ const Clients = () => {
 		<div>
 			<div className='w-fit mx-auto mt-4'>
 				<Totalcountbox
-					itemName={'Clients'}
+					itemName={'임대 현황'}
 					item={allClients}
 					icon={<LuUser />}
 				/>

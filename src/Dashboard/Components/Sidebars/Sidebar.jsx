@@ -12,10 +12,10 @@ const Sidebar = () => {
 		setActiveLink(index)
 	}
 	const SIDEBAR_LINKS = [
-		{ id: 1, path: '/admin/dashboard', name: 'Dashboard', icon: LuBox },
-		{ id: 2, path: 'users', name: 'Users', icon: TbUsers },
-		{ id: 4, path: 'products', name: 'Products', icon: AiOutlineProduct },
-		{ id: 5, path: 'clients', name: 'Clients', icon: LuUser },
+		{ id: 1, path: '/admin/dashboard', name: '대시보드', icon: LuBox },
+		{ id: 2, path: 'users', name: '사용자', icon: TbUsers },
+		{ id: 4, path: 'products', name: '제품', icon: AiOutlineProduct },
+		{ id: 5, path: 'clients', name: '임대 현황', icon: LuUser },
 	]
 	return (
 		<div className='w-16 md:w-56 fixed left-0 top-0 z-10 h-screen border-r px-4 bg-white'>
@@ -65,7 +65,7 @@ const Sidebar = () => {
 					{' '}
 					{/* <span>?</span> */}
 					<span className='md:hidden flex'>?</span>
-					<span className='hidden md:flex'>Need Help ?</span>
+					<span className='hidden md:flex'>문의 ?</span>
 				</p>
 			</div>
 		</div>

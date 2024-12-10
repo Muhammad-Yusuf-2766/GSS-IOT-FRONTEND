@@ -28,19 +28,19 @@ const Navbar = () => {
 
 	const navItems = [
 		{
-			name: 'Home',
+			name: 'GSS',
 			link: '/',
 		},
 		{
-			name: 'Recources',
+			name: '자료실',
 			link: '/recources',
 		},
 		{
-			name: 'Services',
+			name: '서비스',
 			link: '/services',
 		},
 		{
-			name: 'Community',
+			name: '커뮤니티',
 			link: '/community',
 		},
 	]
@@ -108,7 +108,7 @@ const Navbar = () => {
 										}`}
 										className='text-gray-700 text-xl font-semibold hover:underline underline-offset-4 ease-out duration-700 mx-5 '
 									>
-										Dashboard
+										대시보드
 									</Link>
 								) : null}
 							</li>
@@ -122,12 +122,12 @@ const Navbar = () => {
 								<PrimaryBtn
 									className='bg-indigo-600 text-gray-200'
 									route='/login'
-									children='Login'
+									children='로그인'
 								/>
 								<PrimaryBtn
 									className='bg-indigo-600 text-gray-200'
 									route='/signup'
-									children='Sign-up'
+									children='가입하기'
 								/>
 							</>
 						)}

@@ -8,7 +8,7 @@ const MyPage = () => {
 				<div className='w-full h-[630px]'>
 					<div className='w-full h-auto mt-14 flex justify-center items-center'>
 						<h1 className='text-2xl font-semibold  text-gray-700'>
-							You are in your account Page
+							마이페이지
 						</h1>
 					</div>
 					<div className='w-full h-auto flex justify-center items-center gap-10 px-10 mt-10	'>
@@ -23,7 +23,7 @@ const MyPage = () => {
 								{verifyUserData.user_name}
 							</h1>
 							<h2 className='text-2xl font-semibold text-gray-600 mt-3'>
-								Status:{' '}
+								유형:{' '}
 								{verifyUserData.user_type === 'ADMIN'
 									? verifyUserData.user_type
 									: verifyUserData.user_title}
@@ -50,31 +50,31 @@ const MyPage = () => {
 						<div className='w-[60%] h-[400px] px-10 flex justify-center items-center bg-white rounded-lg shadow-lg shadow-gray-500 hover:shadow-indigo-500 duration-200'>
 							<ul className='w-full'>
 								<li className='flex justify-between text-2xl text-gray-600 py-5 border-b-2 border-gray-400'>
-									<span className='w-1/2'>User name:</span>{' '}
+									<span className='w-1/2'>사용자 이름:</span>{' '}
 									<span className=' w-1/2 text-left text-gray-800'>
 										{verifyUserData.user_name}
 									</span>
 								</li>
 								<li className='flex justify-between text-2xl text-gray-600 py-5 border-b-2 border-gray-400'>
-									<span className='w-1/2'>Email:</span>
+									<span className='w-1/2'>이메일:</span>
 									<span className='w-1/2 text-left text-gray-800'>
 										{verifyUserData.user_email}
 									</span>
 								</li>
 								<li className='flex justify-between text-2xl text-gray-600 py-5 border-b-2 border-gray-400'>
-									<span className='w-1/2'>Phone:</span>
+									<span className='w-1/2'>연락처:</span>
 									<span className='w-1/2 text-left text-gray-800'>
 										{verifyUserData.user_phone}
 									</span>
 								</li>
 								<li className='flex justify-between text-2xl text-gray-600 py-5 border-b-2 border-gray-400'>
-									<span className='w-1/2'>User type:</span>{' '}
+									<span className='w-1/2'>사용자 유형:</span>{' '}
 									<span className='w-1/2 text-left text-gray-800'>
 										{verifyUserData.user_type}
 									</span>
 								</li>
 								<li className='flex justify-between text-2xl text-gray-600 py-5'>
-									<span className='w-1/2'>User title:</span>{' '}
+									<span className='w-1/2'>사용자 타이틀:</span>{' '}
 									<span className='w-1/2 text-left text-gray-800'>
 										{verifyUserData.user_title}
 									</span>

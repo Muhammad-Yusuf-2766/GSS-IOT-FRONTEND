@@ -32,15 +32,37 @@ function BuildingNodes() {
 			setNodes(prevNodes => {
 				if (!Array.isArray(prevNodes)) return prevNodes // nodes massiv emas bo'lsa
 
-				return prevNodes.map(node => {
+				const updatedNodes = prevNodes.map(node => {
 					// lastStoredData'dan mos node topish
 					const updatedNode = lastStoredData.find(
 						updated => updated.doorNum === node.doorNum
 					)
+					// Update the node with new values from lastStoredData
+					if (updatedNode) {
+						const updatedNodeWithNewValues = { ...node, ...updatedNode }
 
-					// Agar mos node topilsa, qiymatlarni yangilash
-					return updatedNode ? { ...node, ...updatedNode } : node
+						// Update localStorage as well
+						const storedNodes =
+							JSON.parse(localStorage.getItem(`buildingData_${id}`)) || []
+						const updatedStoredNodes = storedNodes.map(storedNode => {
+							// Update the stored node if it matches the current node
+							return storedNode.doorNum === node.doorNum
+								? { ...storedNode, ...updatedNode }
+								: storedNode
+						})
+
+						// Save the updated nodes back to localStorage
+						localStorage.setItem(
+							`buildingData_${id}`,
+							JSON.stringify(updatedStoredNodes)
+						)
+
+						return updatedNodeWithNewValues
+					}
+					return node
 				})
+
+				return updatedNodes
 			})
 		} catch (error) {
 			console.error('Error in fetchLastLogs:', error)
@@ -124,15 +146,9 @@ function BuildingNodes() {
 		return { color, percentage }
 	}
 
-	const betSample = [30, 31, 32, 34, 35, 37, 38, 39, 32, 31, 40, 41]
-
 	return (
 		<div className='w-full px-5 mt-10 mb-10'>
-			<TotalcntCsv
-				itemName={'Nodes'}
-				item={nodes}
-				icon={<HiMiniSquares2X2 />}
-			/>
+			<TotalcntCsv itemName={'노드'} item={nodes} icon={<HiMiniSquares2X2 />} />
 
 			{error && <h1 className='text-lg text-red-600 text-center'>{error}</h1>}
 
@@ -155,7 +171,7 @@ function BuildingNodes() {
 								</p>
 								<div className='flex items-center gap-2 text-sm bg-gray-300 p-1 rounded-md mb-2'>
 									<p className='text-gray-700 font-semibold'>
-										Position: {node.position}
+										위치: {node.position}
 									</p>
 								</div>
 
@@ -176,7 +192,7 @@ function BuildingNodes() {
 										node.doorChk == 1 ? 'text-red-600' : null
 									}`}
 								>
-									{node.doorChk == 1 ? 'Door is Open' : 'Door is Closed'}
+									{node.doorChk == 1 ? '문 열림' : '문 닫힘'}
 								</h3>
 
 								{/* <div className='flex items-center mt-2'>
@@ -201,7 +217,7 @@ function BuildingNodes() {
 								</div>
 								<p className='text-lg text-indigo-700'>
 									{verifyUserData.user_type === 'ADMIN' &&
-										`Serial Number: ${node.doorNum}`}
+										`SN: ${node.doorNum}`}
 								</p>
 							</div>
 						)

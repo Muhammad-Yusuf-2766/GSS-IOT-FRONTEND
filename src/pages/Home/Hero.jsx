@@ -5,19 +5,19 @@ const Hero = () => {
 	const statistics = [
 		{
 			number: 200,
-			title: 'Clients',
+			title: '고객',
 		},
 		{
 			number: 24,
-			title: 'Projects',
+			title: '프로젝트',
 		},
 		{
 			number: 112,
-			title: 'Products',
+			title: '제품',
 		},
 		{
 			number: 8,
-			title: 'Years experience',
+			title: '년 경력',
 		},
 	]
 	return (

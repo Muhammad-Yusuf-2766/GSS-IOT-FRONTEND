@@ -1,13 +1,6 @@
 import React from 'react'
 
-const tHead = [
-	'Count',
-	'Gateway number',
-	'Nodes',
-	'Status',
-	'Change status',
-	'Delete gateway',
-]
+const tHead = ['No.', '게이트웨이 No.', '노드', '상태', '상태 변경', '삭제']
 
 const GatewaysList = ({ allgateways }) => {
 	// Tekshirish: allgateways massiv mavjudligini va bo'sh emasligini
@@ -20,7 +13,7 @@ const GatewaysList = ({ allgateways }) => {
 	}
 
 	return (
-		<div className='max-h-[620px] overflow-y-auto'>
+		<div className='max-h-[700px] overflow-y-auto'>
 			{/* Set max height as needed */}
 			<table className='w-full text-sm text-center rtl:text-right text-gray-500  rounded-md'>
 				<thead className='text-gray-700 text-xs uppercase bg-gray-300 border-2 border-gray-400'>
@@ -61,13 +54,13 @@ const GatewaysList = ({ allgateways }) => {
 
 							<td className='px-4 py-3 border-x-2 border-gray-400 text-center'>
 								<button className='border py-2 px-4 rounded-md bg-indigo-500 text-white hover:bg-indigo-600'>
-									Change
+									상태 변경
 								</button>
 							</td>
 
 							<td className='px-4 py-3 border-x-2 border-gray-400 text-center'>
 								<button className='border py-2 px-4 rounded-md bg-red-500 text-white hover:bg-red-600'>
-									Delete
+									삭제
 								</button>
 							</td>
 						</tr>

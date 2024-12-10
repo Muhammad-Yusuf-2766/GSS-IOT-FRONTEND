@@ -18,7 +18,7 @@ export function RecourceList({ data }) {
 								htmlFor=''
 								className='underline underline-offset-4 text-blue-500 mr-2'
 							>
-								Download {item.file}:
+								{item.file} 다운로드:
 							</label>
 							<a
 								href={item.url} // Replace with the actual link from your data
@@ -26,7 +26,7 @@ export function RecourceList({ data }) {
 								rel='noopener noreferrer'
 								className='w-fit flex items-center gap-3 bg-indigo-500 text-white py-2 px-4 rounded hover:bg-indigo-600'
 							>
-								Download
+								다운로드
 								<ArrowDownToLine />
 							</a>
 						</div>

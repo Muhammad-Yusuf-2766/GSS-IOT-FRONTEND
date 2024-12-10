@@ -15,22 +15,22 @@ const ActiveProducts = () => {
 					<thead className='text-xs text-gray-700 uppercase bg-gray-300'>
 						<tr>
 							<th scope='col' className='px-4 py-3'>
-								Company name:
+								기업명:
 							</th>
 							<th scope='col' className='px-2 py-3'>
-								Number of buildings:
+								건물 수:
 							</th>
 							<th scope='col' className='px-2 py-3'>
-								Chief Engineer:
+								담당자:
 							</th>
 							<th scope='col' className='px-2 py-3'>
-								Permit-date:
+								임대일:
 							</th>
 							<th scope='col' className='px-2 py-3'>
-								Expiry-date:
+								만료일:
 							</th>
 							<th scope='col' className='px-2 py-3'>
-								Days remaining:
+								잔여일:
 							</th>
 						</tr>
 					</thead>
@@ -79,7 +79,7 @@ const ActiveProducts = () => {
 						to={'clients'}
 						className='text-gray-700 font-bold text-xl hover:underline'
 					>
-						Click to All Clients
+						전체보기
 					</Link>
 				</div>
 			</div>

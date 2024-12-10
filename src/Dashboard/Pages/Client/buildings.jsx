@@ -12,7 +12,7 @@ const Buildings = ({}) => {
 		<div>
 			<div className='w-fit mx-auto mt-4'>
 				<Totalcountbox
-					itemName={'Buildings'}
+					itemName={'건물'}
 					item={buildings}
 					icon={<BsBuildingsFill />}
 				/>
@@ -36,7 +36,7 @@ const Buildings = ({}) => {
 										: `${building.building_name}:`}
 									{'  '}
 									<span className='leading-none text-lg text-gray-700 pb-2'>
-										building - {building.building_num}
+										건물 - {building.building_num}
 									</span>
 								</h1>
 
@@ -49,12 +49,12 @@ const Buildings = ({}) => {
 							<div className='mt-5 flex flex-col space-y-5 pr-10'>
 								<div className='flex justify-start space-x-10 items-center text-left'>
 									<MdOutlineLocationCity size={30} className='text-gray-700' />
-									<h1 className='w-1/2'>Total Gate-ways</h1>
+									<h1 className='w-1/2'>총 게이트웨이</h1>
 									<p>{building.gateway_sets.length}</p>
 								</div>
 								<div className='flex justify-start space-x-10 items-center text-left'>
 									<MdOutlineLocationCity size={30} className='text-gray-700' />
-									<h1 className='w-1/2'>Total Workers</h1>
+									<h1 className='w-1/2'>총 근로자</h1>
 									<p>{building.users.length}</p>
 								</div>
 								<div
@@ -64,17 +64,17 @@ const Buildings = ({}) => {
 										size={30}
 										className={`text-gray-700 ${daysRemainingStyle}`}
 									/>
-									<h1 className={`w-1/2 `}>Remaining days</h1>
+									<h1 className={`w-1/2 `}>잔여일</h1>
 									<p>{daysRemaining}</p>
 								</div>
 								<div className='flex justify-start space-x-10 items-center text-left'>
 									<BsCalendarDate size={30} className='text-gray-700' />
-									<h1 className='w-1/2'>Expiry-date</h1>
+									<h1 className='w-1/2'>만료일</h1>
 									<p>{building.expiration_date}</p>
 								</div>
 								<div className='flex justify-start space-x-10 items-center text-left'>
 									<MdOutlineLocationCity size={30} className='text-gray-700' />
-									<h1 className='w-1/2'>Building address</h1>
+									<h1 className='w-1/2'>현장 주소</h1>
 									<p>{building.building_addr}</p>
 								</div>
 							</div>
