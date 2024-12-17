@@ -6,7 +6,6 @@ const LoginForm = () => {
 	const [user_email, setName] = useState('')
 	const [user_password, setPassword] = useState('')
 	const [error, setError] = useState('')
-	// const { setToken } = useContext(MainContext)
 
 	const handleSubmit = async e => {
 		e.preventDefault()
@@ -71,7 +70,7 @@ const LoginForm = () => {
 										autoComplete='username'
 										className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 '
 										placeholder='name@company.com'
-										required=''
+										required
 										onChange={e => setName(e.target.value)}
 									/>
 								</div>
@@ -89,7 +88,7 @@ const LoginForm = () => {
 										placeholder='••••••••'
 										autoComplete='current-password'
 										className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 '
-										required=''
+										required
 										value={user_password}
 										onChange={e => setPassword(e.target.value)}
 									/>
@@ -109,6 +108,13 @@ const LoginForm = () => {
 										className='font-medium hover:underline text-blue-600'
 									>
 										Create account here
+									</a>{' '}
+									or{' '}
+									<a
+										href='/reset-password'
+										className='font-medium hover:underline text-blue-600'
+									>
+										Reset password
 									</a>
 								</p>
 							</form>

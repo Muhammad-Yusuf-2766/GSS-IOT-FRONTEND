@@ -45,6 +45,40 @@ export const loginRequest = async loginData => {
 	}
 }
 
+export const resetPwRequest = async user_email => {
+	try {
+		console.log(user_email)
+		const result = await axios.post(
+			`${import.meta.env.VITE_SERVER_BASE_URL}/reset-password/request`,
+			{ user_email },
+			{
+				withCredentials: true,
+			}
+		)
+		return result.data
+	} catch (err) {
+		console.error(`ERROR ::: resetPwRequest ${err.message}`)
+		throw err
+	}
+}
+
+export const resetPwVerify = async data => {
+	try {
+		console.log(data)
+		const result = await axios.post(
+			`${import.meta.env.VITE_SERVER_BASE_URL}/reset-password/verify`,
+			data,
+			{
+				withCredentials: true,
+			}
+		)
+		return result.data
+	} catch (err) {
+		console.error(`ERROR ::: resetPwRequest ${err.message}`)
+		throw err
+	}
+}
+
 export const logOutRequest = async () => {
 	try {
 		const result = await axios.get(
@@ -94,7 +128,10 @@ export const getAllUsersRequest = async () => {
 export const getAllGwsRequest = async () => {
 	try {
 		const response = await axios.get(
-			`${import.meta.env.VITE_SERVER_BASE_URL}/product/all-gateways`
+			`${import.meta.env.VITE_SERVER_BASE_URL}/product/all-gateways`,
+			{
+				withCredentials: true,
+			}
 		)
 		return response.data
 	} catch (error) {
@@ -105,7 +142,10 @@ export const getAllGwsRequest = async () => {
 export const getAllNodesRequest = async () => {
 	try {
 		const response = await axios.get(
-			`${import.meta.env.VITE_SERVER_BASE_URL}/product/all-nodes`
+			`${import.meta.env.VITE_SERVER_BASE_URL}/product/all-nodes`,
+			{
+				withCredentials: true,
+			}
 		)
 		return response.data
 	} catch (error) {

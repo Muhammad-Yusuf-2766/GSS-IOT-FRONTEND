@@ -54,7 +54,10 @@ const GatewayForm = ({ availableNodes }) => {
 		try {
 			const response = await axios.post(
 				`${import.meta.env.VITE_SERVER_BASE_URL}/product/create-gateway`,
-				gatewayData
+				gatewayData,
+				{
+					withCredentials: true,
+				}
 			)
 			console.log(response)
 			if (response.data && response.data.state === 'Success') {

@@ -47,7 +47,10 @@ const NodeForm = () => {
 			// Send POST request to create multiple nodes at once
 			const response = await axios.post(
 				`${import.meta.env.VITE_SERVER_BASE_URL}/product/create-multiple-nodes`,
-				nodes
+				nodes,
+				{
+					withCredentials: true,
+				}
 			)
 
 			// Handling success or error response

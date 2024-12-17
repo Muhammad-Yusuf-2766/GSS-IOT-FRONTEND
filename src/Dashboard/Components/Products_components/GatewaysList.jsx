@@ -47,7 +47,7 @@ const GatewaysList = ({ allgateways }) => {
 							<td className='px-4 py-3 border-x-2 border-gray-400'>
 								<div
 									className={`w-5 h-5 rounded-full ${
-										gateway.product_status ? 'bg-green-400' : 'bg-red-500'
+										gateway.product_status ? 'bg-red-500' : 'bg-green-400'
 									} mx-auto`}
 								/>
 							</td>

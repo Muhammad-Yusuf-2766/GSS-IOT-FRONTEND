@@ -3,7 +3,10 @@ import axios from 'axios'
 export const getActiveNodes = async () => {
 	try {
 		const response = await axios.get(
-			`${import.meta.env.VITE_SERVER_BASE_URL}/product/active-nodes`
+			`${import.meta.env.VITE_SERVER_BASE_URL}/product/active-nodes`,
+			{
+				withCredentials: true,
+			}
 		)
 		return response.data
 	} catch (error) {
@@ -14,7 +17,10 @@ export const getActiveNodes = async () => {
 export const fetchGateways = async () => {
 	try {
 		const response = await axios.get(
-			`${import.meta.env.VITE_SERVER_BASE_URL}/product/active-gateWays`
+			`${import.meta.env.VITE_SERVER_BASE_URL}/product/active-gateWays`,
+			{
+				withCredentials: true,
+			}
 		)
 		return response.data
 	} catch (error) {
@@ -25,7 +31,10 @@ export const fetchGateways = async () => {
 export const fetchUsers = async () => {
 	try {
 		const response = await axios.get(
-			`${import.meta.env.VITE_SERVER_BASE_URL}/get-users`
+			`${import.meta.env.VITE_SERVER_BASE_URL}/get-users`,
+			{
+				withCredentials: true,
+			}
 		)
 		return response.data
 	} catch (error) {
@@ -37,7 +46,10 @@ export const postBuildingdata = async data => {
 	try {
 		const response = await axios.post(
 			`${import.meta.env.VITE_SERVER_BASE_URL}/product/create-building`,
-			data
+			data,
+			{
+				withCredentials: true,
+			}
 		)
 		return response.data
 	} catch (error) {
@@ -49,7 +61,10 @@ export const postClientdata = async data => {
 	try {
 		const response = await axios.post(
 			`${import.meta.env.VITE_SERVER_BASE_URL}/product/create-client`,
-			data
+			data,
+			{
+				withCredentials: true,
+			}
 		)
 		return response.data
 	} catch (error) {
@@ -60,7 +75,10 @@ export const postClientdata = async data => {
 export const fetchBuildings = async () => {
 	try {
 		const response = await axios.get(
-			`${import.meta.env.VITE_SERVER_BASE_URL}/product/get-buildings`
+			`${import.meta.env.VITE_SERVER_BASE_URL}/product/get-buildings`,
+			{
+				withCredentials: true,
+			}
 		)
 		return response.data.data
 	} catch (error) {
@@ -78,6 +96,7 @@ export const fetchBossBuilidngs = async (userId, userTitle) => {
 			`${import.meta.env.VITE_SERVER_BASE_URL}/product/get-boss/buildings`,
 			{
 				params: { userId },
+				withCredentials: true,
 			}
 		)
 		return response.data.buildings
@@ -96,6 +115,7 @@ export const fetchWorkerBuilidngs = async (userId, userTitle) => {
 			`${import.meta.env.VITE_SERVER_BASE_URL}/product/get-worker/buildings`,
 			{
 				params: { userId },
+				withCredentials: true,
 			}
 		)
 		return response.data.buildings
@@ -109,7 +129,10 @@ export const fetchBuildingNodes = async buildingId => {
 		const response = await axios.get(
 			`${
 				import.meta.env.VITE_SERVER_BASE_URL
-			}/product/get-boss/building-nodes/${buildingId}`
+			}/product/get/building-nodes/${buildingId}`,
+			{
+				withCredentials: true,
+			}
 		)
 		return response.data
 	} catch (error) {
@@ -122,7 +145,10 @@ export const fetchBuildingNodes = async buildingId => {
 export const fetchAllClients = async () => {
 	try {
 		const response = await axios.get(
-			`${import.meta.env.VITE_SERVER_BASE_URL}/product/get-all-clients`
+			`${import.meta.env.VITE_SERVER_BASE_URL}/product/get-all-clients`,
+			{
+				withCredentials: true,
+			}
 		)
 		return response.data
 	} catch (error) {
@@ -133,7 +159,10 @@ export const fetchAllClients = async () => {
 export const fetchClientDetails = async id => {
 	try {
 		const response = await axios.get(
-			`${import.meta.env.VITE_SERVER_BASE_URL}/product/client/${id}`
+			`${import.meta.env.VITE_SERVER_BASE_URL}/product/client/${id}`,
+			{
+				withCredentials: true,
+			}
 		)
 		return response.data
 	} catch (error) {
@@ -149,7 +178,10 @@ export const fetchAdminBuildings = async (userId, user_title) => {
 
 		const response = await axios.get(
 			`${import.meta.env.VITE_SERVER_BASE_URL}/product/get-admin/buildings`,
-			{ params: { userId } }
+			{
+				params: { userId },
+				withCredentials: true,
+			}
 		)
 
 		return response.data.buildings
@@ -161,7 +193,10 @@ export const fetchAdminBuildings = async (userId, user_title) => {
 export const updateAllNodeStatus = async () => {
 	try {
 		const response = await axios.get(
-			`${import.meta.env.VITE_SERVER_BASE_URL}/product/update-allnodes_sts`
+			`${import.meta.env.VITE_SERVER_BASE_URL}/product/update-allnodes_sts`,
+			{
+				withCredentials: true,
+			}
 		)
 
 		return response.data
@@ -173,7 +208,10 @@ export const updateAllNodeStatus = async () => {
 export const updateNodeStatus = async id => {
 	try {
 		const response = await axios.get(
-			`${import.meta.env.VITE_SERVER_BASE_URL}/product/update-node_sts/${id}`
+			`${import.meta.env.VITE_SERVER_BASE_URL}/product/update-node_sts/${id}`,
+			{
+				withCredentials: true,
+			}
 		)
 
 		return response.data
@@ -185,7 +223,10 @@ export const updateNodeStatus = async id => {
 export const deleteNode = async id => {
 	try {
 		const response = await axios.delete(
-			`${import.meta.env.VITE_SERVER_BASE_URL}/product/delete-node/${id}`
+			`${import.meta.env.VITE_SERVER_BASE_URL}/product/delete-node/${id}`,
+			{
+				withCredentials: true,
+			}
 		)
 
 		return response.data

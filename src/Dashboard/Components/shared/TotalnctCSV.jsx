@@ -26,7 +26,9 @@ const TotalcntCsv = ({ itemName, item, icon }) => {
 			import.meta.env.VITE_SERVER_BASE_URL
 		}/product/setnodes-position`
 		try {
-			const response = await axios.post(endpoint, data)
+			const response = await axios.post(endpoint, data, {
+				withCredentials: true,
+			})
 			const pnodes = response.data
 			if (pnodes.positioned) {
 				toast.success(pnodes.state, {

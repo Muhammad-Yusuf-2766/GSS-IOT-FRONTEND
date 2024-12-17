@@ -47,6 +47,7 @@ const DashboardLayout = () => {
 			// API so'rovni yuborish
 			const response = await axios.get(endpoint, {
 				params: { userId, userTitle, userType },
+				withCredentials: true,
 			})
 
 			const gatewaySets = response.data.gateway_sets

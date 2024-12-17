@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import ScrollToTop from './components/Card/window.scroll'
 import PrivateClientRoute from './components/PrivateClientRoute'
 import PrivateRoute from './components/PrivateRoute'
+import Resetwassword from './components/Register & login form/Reset_password'
 import ClientDetails from './Dashboard/Components/Client_comp/ClientDetail'
 import AuthorizeError from './Dashboard/Components/Errors/Error'
 import ActiveProducts from './Dashboard/Components/Home_comp/ActiveProducts'
@@ -46,6 +47,7 @@ function App() {
 						<Route path='/community' element={<CommunityPage />} />
 						<Route path='/signup' element={<SignupPage />} />
 						<Route path='/login' element={<LoginPage />} />
+						<Route path='/reset-password' element={<Resetwassword />} />
 						<Route path='/my-page' element={<MyPage />} />
 					</Route>
 					{/* Admin Routes with BuildingsProvider and BuildingIoProvider */}

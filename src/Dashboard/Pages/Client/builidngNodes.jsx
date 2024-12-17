@@ -22,7 +22,13 @@ function BuildingNodes() {
 			const endpoint = `${
 				import.meta.env.VITE_SERVER_BASE_URL
 			}/product/get/last-logs`
-			const response = await axios.post(endpoint, { gateway_sets })
+			const response = await axios.post(
+				endpoint,
+				{ gateway_sets },
+				{
+					withCredentials: true,
+				}
+			)
 
 			// Javobni log qilish
 			const lastStoredData = response.data // Bu massiv ekanligi tasdiqlandi
