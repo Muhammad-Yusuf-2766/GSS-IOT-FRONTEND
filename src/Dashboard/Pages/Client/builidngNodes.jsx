@@ -4,7 +4,7 @@ import { FaLock, FaLockOpen } from 'react-icons/fa6'
 import { HiMiniSquares2X2 } from 'react-icons/hi2'
 import { useParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
-import { verifyUserData } from '../../../ApiServices/verifyAuth'
+import useAuthStore from '../../../ApiServices/verifyAuth'
 import TotalcntCsv from '../../Components/shared/TotalnctCSV'
 import { useBuildingIoContext } from '../../Context/BuildingSocket'
 import { useGatewaySets } from '../../Context/Gw_setsContext'
@@ -16,6 +16,7 @@ function BuildingNodes() {
 	const alarmRef = useRef(null)
 	const { buildingData } = useBuildingIoContext()
 	const gatewaySets = useGatewaySets()
+	const { user, checkUserState } = useAuthStore()
 
 	const fetchLastLogs = async gateway_sets => {
 		try {
@@ -98,7 +99,7 @@ function BuildingNodes() {
 	}, [id, buildingData])
 
 	const getBatteryIconAndPercentage = batteryLevel => {
-		let icon
+		// let icon
 		let color
 		let percentage
 
@@ -222,8 +223,7 @@ function BuildingNodes() {
 									<span className='text-sm font-medium'>{percentage}</span>
 								</div>
 								<p className='text-lg text-indigo-700'>
-									{verifyUserData.user_type === 'ADMIN' &&
-										`SN: ${node.doorNum}`}
+									{user.user_type === 'ADMIN' && `SN: ${node.doorNum}`}
 								</p>
 							</div>
 						)

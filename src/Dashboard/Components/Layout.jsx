@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import { io } from 'socket.io-client'
-import { verifyUserData } from '../../ApiServices/verifyAuth'
+import useAuthStore from '../../ApiServices/verifyAuth'
 import { useBuildings } from '../Context/BuildingContext'
 import { useBuildingIoContext } from '../Context/BuildingSocket'
 import { GatewaySetsContext } from '../Context/Gw_setsContext'
@@ -16,7 +16,7 @@ import SidebarClient from './Sidebars/Sidebar_Client'
 const DashboardLayout = () => {
 	const { buildings } = useBuildings()
 	const { updateBuildingData } = useBuildingIoContext()
-	// const [nodes, setNodes] = useState([])
+	const { user, checkUserState } = useAuthStore()
 	const alarmRef = useRef(null)
 	const socket = useRef(null) // Socket clientni saqlash uchun reference
 	const [gatewaySets, setGatewaySets] = useState()
@@ -68,10 +68,8 @@ const DashboardLayout = () => {
 	}
 
 	useEffect(() => {
-		const userData = JSON.parse(localStorage.getItem('user_data'))
-
-		if (userData && userData._id && userData.user_title) {
-			fetchUserGateways(userData._id, userData.user_title, userData.user_type)
+		if (user && user._id && user.user_title) {
+			fetchUserGateways(user._id, user.user_title, user.user_type)
 		}
 		// Socket.IO ulanishini yaratish
 		if (!socket.current) {
@@ -141,14 +139,14 @@ const DashboardLayout = () => {
 			})
 		}
 	}, [buildings])
-	if (!verifyUserData) {
+	if (!user) {
 		return <AuthorizeError />
 	}
 
 	return (
 		<>
 			<GatewaySetsContext.Provider value={gatewaySets}>
-				{verifyUserData.user_type === 'ADMIN' ? (
+				{user.user_type === 'ADMIN' ? (
 					<div className='flex bg-[#efefef] h-full'>
 						<Sidebar />
 						<div className='w-full ml-16 md:ml-56'>
@@ -156,8 +154,9 @@ const DashboardLayout = () => {
 							<Outlet />
 							<ToastContainer autoClose={1500} closeOnClick />
 						</div>
+						<audio ref={alarmRef} src='/Audio/alarm_audio.wav' />
 					</div>
-				) : verifyUserData.user_type === 'CLIENT' ? (
+				) : user.user_type === 'CLIENT' ? (
 					<div className='flex bg-[#efefef] h-full'>
 						{/* Client specific layout */}
 						<SidebarClient />

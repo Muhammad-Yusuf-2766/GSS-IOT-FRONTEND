@@ -1,16 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import useAuthStore from '../../ApiServices/verifyAuth'
 
 const UserHeader = ({ handeLogout }) => {
 	const [openDrop, setOpenDrop] = useState(false)
-	const [user, setUser] = useState()
+	const { user } = useAuthStore()
 
 	// ======== Click everywhere to close User Drop menu ======= //
 	const menuRef = useRef()
 	const imgRef = useRef()
 	useEffect(() => {
-		const stordeUser = localStorage.getItem('user_data')
-		setUser(JSON.parse(stordeUser))
 		const handleClickOutside = e => {
 			// Check if the click is outside both the menu and the image
 			if (

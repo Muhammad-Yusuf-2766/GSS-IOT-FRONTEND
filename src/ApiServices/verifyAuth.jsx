@@ -1,22 +1,28 @@
-import Cookies from 'universal-cookie'
+import axios from 'axios'
+import { create } from 'zustand'
 
-const cookie = new Cookies()
-const accessToken = cookie.get('access_token')
+const useAuthStore = create(set => ({
+	user: null,
+	isLoading: false,
+	error: null,
 
-let user_data
+	checkUserState: async () => {
+		set({ isLoading: true, error: null })
+		try {
+			const res = await axios.get('http://localhost:3000/check-me', {
+				withCredentials: true,
+			})
+			const data = res.data
+			if (data.state === 'Success') {
+				set({ user: data.user, isLoading: false })
+			} else {
+				set({ user: null, isLoading: false })
+			}
+		} catch (error) {
+			set({ error: error.message, isLoading: false })
+		}
+	},
+	logout: () => set({ user: null }),
+}))
 
-if (accessToken) {
-	const userDataJson = localStorage.getItem('user_data')
-	user_data = userDataJson ? JSON.parse(userDataJson) : null
-	if (user_data) {
-		user_data.user_img = '/Members/Kim_prof.jpg'
-	}
-	console.log('You are Authenticated')
-} else {
-	console.log('You are not authenticated, clearing user_data')
-	localStorage.removeItem('user_data')
-}
-
-console.log('== verify ==')
-
-export const verifyUserData = user_data ?? null
+export default useAuthStore

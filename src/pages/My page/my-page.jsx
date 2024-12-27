@@ -1,10 +1,12 @@
 import React from 'react'
-import { verifyUserData } from '../../ApiServices/verifyAuth'
+import useAuthStore from '../../ApiServices/verifyAuth'
 
 const MyPage = () => {
+	const { user, checkUserState } = useAuthStore()
+	console.log('zustandStored-user:', user)
 	return (
 		<>
-			{verifyUserData && (
+			{user && (
 				<div className='w-full h-[630px]'>
 					<div className='w-full h-auto mt-14 flex justify-center items-center'>
 						<h1 className='text-2xl font-semibold  text-gray-700'>
@@ -20,13 +22,11 @@ const MyPage = () => {
 								alt=''
 							/>
 							<h1 className='text-3xl font-semibold text-gray-800 mt-3 mb-5 underline underline-offset-4'>
-								{verifyUserData.user_name}
+								{user.user_name}
 							</h1>
 							<h2 className='text-2xl font-semibold text-gray-600 mt-3'>
 								유형:{' '}
-								{verifyUserData.user_type === 'ADMIN'
-									? verifyUserData.user_type
-									: verifyUserData.user_title}
+								{user.user_type === 'ADMIN' ? user.user_type : user.user_title}
 							</h2>
 							<h3 className='text-xl font-semibold text-gray-600 mt-1 text-center'>
 								Hyundai Constructions Group
@@ -52,31 +52,31 @@ const MyPage = () => {
 								<li className='flex justify-between text-2xl text-gray-600 py-5 border-b-2 border-gray-400'>
 									<span className='w-1/2'>사용자 이름:</span>{' '}
 									<span className=' w-1/2 text-left text-gray-800'>
-										{verifyUserData.user_name}
+										{user.user_name}
 									</span>
 								</li>
 								<li className='flex justify-between text-2xl text-gray-600 py-5 border-b-2 border-gray-400'>
 									<span className='w-1/2'>이메일:</span>
 									<span className='w-1/2 text-left text-gray-800'>
-										{verifyUserData.user_email}
+										{user.user_email}
 									</span>
 								</li>
 								<li className='flex justify-between text-2xl text-gray-600 py-5 border-b-2 border-gray-400'>
 									<span className='w-1/2'>연락처:</span>
 									<span className='w-1/2 text-left text-gray-800'>
-										{verifyUserData.user_phone}
+										{user.user_phone}
 									</span>
 								</li>
 								<li className='flex justify-between text-2xl text-gray-600 py-5 border-b-2 border-gray-400'>
 									<span className='w-1/2'>사용자 유형:</span>{' '}
 									<span className='w-1/2 text-left text-gray-800'>
-										{verifyUserData.user_type}
+										{user.user_type}
 									</span>
 								</li>
 								<li className='flex justify-between text-2xl text-gray-600 py-5'>
 									<span className='w-1/2'>사용자 타이틀:</span>{' '}
 									<span className='w-1/2 text-left text-gray-800'>
-										{verifyUserData.user_title}
+										{user.user_title}
 									</span>
 								</li>
 							</ul>

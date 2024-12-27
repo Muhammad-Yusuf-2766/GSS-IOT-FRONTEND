@@ -1,10 +1,11 @@
 // === Icons === //
 import { toast } from 'react-toastify'
 import { logOutRequest } from '../../../ApiServices/Auth_api'
-import { verifyUserData } from '../../../ApiServices/verifyAuth'
+import useAuthStore from '../../../ApiServices/verifyAuth'
 import UserHeader from '../../../components/User/Userbadge'
 
 const HeaderClient = () => {
+	const { user, checkUserState } = useAuthStore()
 	// Handle logout
 	const handleLogoutRequest = async () => {
 		try {
@@ -25,22 +26,22 @@ const HeaderClient = () => {
 
 	return (
 		<div className='flex justify-between items-center p-4 border-indigo-500 border-b-2 '>
-			{verifyUserData && (
+			{user && (
 				<div>
 					<h1 className='text-md font-semibold text-gray-700'>환영합니다.</h1>
 
-					{verifyUserData.user_title === 'BOSS' ? (
+					{user.user_title === 'BOSS' ? (
 						<p className='text-xl font-semibold text-gray-700'>
 							매니저{' '}
 							<span className='text-xl font-bold text-indigo-700'>
 								{' '}
-								{verifyUserData.user_name.toUpperCase()}
+								{user.user_name.toUpperCase()}
 							</span>
 						</p>
 					) : (
 						<span className='text-xl font-bold text-indigo-700'>
 							{' '}
-							{verifyUserData.user_name.toUpperCase()}
+							{user.user_name.toUpperCase()}
 						</span>
 					)}
 				</div>

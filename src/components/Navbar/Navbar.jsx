@@ -1,14 +1,15 @@
 import { Menu, X } from 'lucide-react'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { logOutRequest } from '../../ApiServices/Auth_api'
-import { verifyUserData } from '../../ApiServices/verifyAuth'
+import useAuthStore from '../../ApiServices/verifyAuth'
 import PrimaryBtn from '../Button/PrimaryBtn'
 import UserHeader from '../User/Userbadge'
 
 const Navbar = () => {
 	const [navbar, setNavbar] = useState(false)
+	const { user, checkUserState } = useAuthStore()
 	const handleLogoutRequest = async () => {
 		try {
 			const res = await logOutRequest()
@@ -25,6 +26,10 @@ const Navbar = () => {
 			toast.error('Error on Logout :(')
 		}
 	}
+
+	useEffect(() => {
+		checkUserState()
+	}, [checkUserState])
 
 	const navItems = [
 		{
@@ -99,10 +104,10 @@ const Navbar = () => {
 								</li>
 							))}
 							<li>
-								{verifyUserData ? (
+								{user ? (
 									<Link
 										to={`${
-											verifyUserData.user_type === 'ADMIN'
+											user.user_type === 'ADMIN'
 												? '/admin/dashboard'
 												: '/client/dashboard'
 										}`}
@@ -115,7 +120,7 @@ const Navbar = () => {
 						</ul>
 					</div>
 					<div className='flex gap-x-2'>
-						{verifyUserData ? (
+						{user ? (
 							<UserHeader handeLogout={handleLogoutRequest} />
 						) : (
 							<>

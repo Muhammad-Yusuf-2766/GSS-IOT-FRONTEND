@@ -3,10 +3,12 @@ import { FaClipboardList, FaPlus } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { logOutRequest } from '../../../ApiServices/Auth_api'
-import { verifyUserData } from '../../../ApiServices/verifyAuth'
+import useAuthStore from '../../../ApiServices/verifyAuth'
 import UserHeader from '../../../components/User/Userbadge'
 
 const Header = () => {
+	const { user, checkUserState } = useAuthStore()
+
 	// Handle logout
 	const handleLogoutRequest = async () => {
 		try {
@@ -27,14 +29,14 @@ const Header = () => {
 
 	return (
 		<div className='flex justify-between items-center p-4 border-gray-500 border-b-2'>
-			{verifyUserData && (
+			{user && (
 				<div>
 					<h1 className='text-md font-semibold text-gray-700'>환영합니다.</h1>
 					<p className='text-xl font-semibold text-gray-700'>
 						GSS-GROUP 매니저{' '}
 						<span className='text-xl font-bold text-indigo-700'>
 							{' '}
-							{verifyUserData.user_name.toUpperCase()}
+							{user.user_name.toUpperCase()}
 						</span>
 					</p>
 				</div>

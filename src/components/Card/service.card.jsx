@@ -17,7 +17,7 @@ const ServiceCard = ({ data }) => {
 				}}
 			>
 				<Link to={`/services/${data.id}`}>
-					<div className='w-full h-full bg-black/25 absolute top-0 left-0 -z-10'></div>
+					<div className='w-full h-full bg-black/25 absolute top-0 left-0 -z-10' />
 					<div className='w-full h-full flex items-center justify-center flex-col text-white p-4 z-10'>
 						<h1 className='text-xl text-gray-100 font-semibold text-center mb-4'>
 							{data.title} <br /> {data.title_2}

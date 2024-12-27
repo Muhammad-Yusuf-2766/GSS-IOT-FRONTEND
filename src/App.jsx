@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import 'react-toastify/dist/ReactToastify.css'
+import useAuthStore from './ApiServices/verifyAuth'
 import ScrollToTop from './components/Card/window.scroll'
 import PrivateClientRoute from './components/PrivateClientRoute'
 import PrivateRoute from './components/PrivateRoute'
@@ -33,6 +34,13 @@ import LoginPage from './pages/Signup & Login/Login'
 import SignupPage from './pages/Signup & Login/Signup'
 
 function App() {
+	const { user, checkUserState } = useAuthStore()
+	console.log('AuthStored-user:', user)
+
+	useEffect(() => {
+		checkUserState()
+	}, [checkUserState])
+
 	return (
 		<div className='min-h-screen'>
 			<Router>
