@@ -9,9 +9,12 @@ const useAuthStore = create(set => ({
 	checkUserState: async () => {
 		set({ isLoading: true, error: null })
 		try {
-			const res = await axios.get('http://localhost:3000/check-me', {
-				withCredentials: true,
-			})
+			const res = await axios.get(
+				`${import.meta.env.VITE_SERVER_BASE_URL}/check-me`,
+				{
+					withCredentials: true,
+				}
+			)
 			const data = res.data
 			if (data.state === 'Success') {
 				set({ user: data.user, isLoading: false })
