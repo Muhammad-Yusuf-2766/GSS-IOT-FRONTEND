@@ -25,7 +25,7 @@ const useAuthStore = create(set => ({
 			set({ error: error.message, isLoading: false })
 		}
 	},
-	logout: () => set({ user: null }),
+	// logout: () => set({ user: null }),
 }))
 
 export default useAuthStore
